@@ -51,10 +51,6 @@ a
   width: 100%
   background: url('../images/Background_4.png')
 
-.services
-  background: linear-gradient(60deg, rgba(47,162,229,0.2) 0%,rgba(47,162,229,0.7) 50%,rgba(47,162,229,0.2) 100%)
-  margin-top: 24em
-
 .menu-header
   font-family: $font-headings
   text-align: center
@@ -224,12 +220,22 @@ footer
   height: 1px
   background: $text-color-main
 
+.background-gradient
+  background: linear-gradient(5deg, rgba(47,162,229,0.0) 10%,rgba(47,162,229,0.5) 50%,rgba(47,162,229,0.0) 90%)
+  height: 1514px
+  display: table
+  width: 100%
+
+.services
+  display: table-cell
+  vertical-align: middle
+
 //  SERVICE-BLOCKS
 .service-blocks_column
   transform: rotate($rotation)
   // overflow: visible
   // position: relative
-  width: 44.5%
+  width: 40%
   //46.5
   float: left
   margin: 1% 0
