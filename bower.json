@@ -2,7 +2,8 @@
   "name": "psd-to-html-2",
   "private": true,
   "dependencies": {
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

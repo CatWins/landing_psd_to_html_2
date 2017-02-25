@@ -3,6 +3,7 @@
 
 @import "variables.sass"
 @import "grid.sass"
+@import "../../bower_components/font-awesome/scss/font-awesome.scss"
 @import "../fonts/geogrotesque-medium/geogrotesque-medium.css"
 @import "../fonts/inconsolata/inconsolata.css"
 @import "../fonts/montserrat/montserrat.css"
@@ -126,20 +127,6 @@ footer
     vertical-align: middle
     img
       display: inline
-
-.overlay-wrapper
-  float: left
-  position: relative
-
-.video
-  > div
-    transform: rotate($rotation)
-    overflow: hidden
-    height: 60em
-    img
-      transform: rotate(-$rotation)
-      position: relative
-      top: 0
 
 .browserupgrade
   margin: 0.2em 0
@@ -303,3 +290,62 @@ footer
   font-size: 1.5em
   letter-spacing: normal
   padding: .8em 1.8em
+
+//VIDEO
+.video
+  position: relative
+  overflow: hidden
+  height: 890px
+
+.video_content
+  transform: skewX(-30deg)
+  position: absolute
+  left: -15%
+  right: -16%
+
+.video_unit
+  overflow: hidden
+  display: block
+  float: left
+  position: relative
+  width: 33.333%
+  height: 890px
+
+.video_unit::before
+  content: ""
+  position: absolute
+  width: 200%
+  height: 100%
+  top: 0
+  left: -30%
+  transform: skewX(30deg)
+  z-index: -1
+
+.video_overlay
+  transform: skewX(30deg)
+  position: absolute
+  width: 100%
+  height: 100%
+  left: 80%
+  top: 46%
+  font-size: 5em
+  display: none
+
+.video_unit__img-1:before
+  background: url(/images/Video_1.png)
+.video_unit__img-1
+  .video_overlay
+    left: 93%
+
+.video_unit__img-2::before
+  background: url(/images/Video_2.png)
+
+.video_unit__img-3:before
+  background: url(/images/Video_3.png)
+.video_unit__img-3
+  .video_overlay
+    left: 67%
+
+.video_unit:hover
+  .video_overlay
+    display: block
