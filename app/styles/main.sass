@@ -102,13 +102,6 @@ a
     height: 1px
     background: $text-color-main
 
-.sign-up
-  text-align: center
-  background-color: $sign-up-color
-
-footer
-  background-color: $footer-color
-
 .intro
   margin-top: 24em
   h3
@@ -435,3 +428,50 @@ footer
 
 .slider_control__on
   background: $slider_control__active-color
+
+//  SIGN-UP
+
+.sign-up
+  text-align: center
+  background-color: $sign-up__color
+  height: 7em
+  display: table
+  width: 100%
+  cursor: pointer
+  transition-property: background-color
+  transition-timing-function: ease
+  transition-duration: .2s
+
+.sign-up:hover
+  background-color: lighten($sign-up__color, 5%)
+
+.sign-up_title
+  display: table-cell
+  vertical-align: middle
+  font-family: $font-headings
+  font-size: 1.3em
+  cursor: pointer
+
+//  FOOTER
+
+.footer
+  background-color: $footer__color
+  font-size: .9em
+  font-weight: 600
+
+.footer_content
+  padding: 3.6em 0 6.5em
+
+.footer_title
+  color: $footer_title__color
+
+.footer_list-of-links
+  list-style: none
+  padding: 0
+  margin: 1.8em 0 0
+  li
+    margin-top: .4em
+
+.footer_link
+  text-decoration: none
+  color: $footer_link__color
