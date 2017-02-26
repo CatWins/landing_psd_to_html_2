@@ -40,7 +40,6 @@ function calcWidth(slider) {
   if (!$.isNumeric(trigger_width) || $(window).width() < trigger_width) {
     var w = Math.floor($(slider).width());
     var wm = Math.ceil($(slider).find(".slider_unit").width(w).outerWidth(true));
-    //console.log(w+' ||| '+wm);
     $(slider).find(".slider_wrap").width($(slider).find(".slider_unit").length * wm);
     var frame = $(slider).find(".slider_control__on").attr("rel");
     sliderJS(frame, slider);
@@ -54,12 +53,10 @@ function calcWidth(slider) {
 }
 
 function sliderJS(obj, sl) {
-  //console.log(obj);
   var wrap = $(sl).find(".slider_wrap");
   var bl = $(sl).find(".slider_unit.slider_unit__"+obj);
   var step = $(bl).outerWidth(true);
   $(wrap).css("margin-left", -step*obj);
-  //animate({marginLeft: "-"+step*obj}, 500);
 }
 $(document).on("click", ".slider .slider_nav .slider_control", function() {
   var sl = $(this).closest(".slider");
