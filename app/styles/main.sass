@@ -163,6 +163,11 @@ a
   background: $color-bg-base
   margin: .5em 0
   display: table
+  transition: background-color .2s, color .2s
+
+.service-blocks_block:hover
+  background-color: $service-blocks__overlay-color
+  color: $service-blocks__overlay-text-color
 
 .service-blocks_content
   transform-origin: center
@@ -237,22 +242,29 @@ a
 .portfolio_case-image
   transform: translate(-25%, -15%)
 
+.portfolio_case-overlay
+  visibility: hidden
+  color: rgba(255, 255, 255, 0)
+  transition: visibility 0s, color .2s, background-color .2s
+  background-color: rgba(136, 136, 136, 0)
+  position: absolute
+  width: $portfolio_case-size * 2
+  height: $portfolio_case-size * 2
+  right: -50%
+  top: -50%
+  z-index: 2
+  vertical-align: middle
+  display: table-cell
+  .portfolio_case-title
+    display: block
+  .portfolio_case-brand
+    display: block
+
 .portfolio_case:hover
   .portfolio_case-overlay
-    background: #888
-    position: absolute
-    width: $portfolio_case-size * 2
-    height: $portfolio_case-size * 2
-    right: -50%
-    top: -50%
-    z-index: 2
-    opacity: .8
-    vertical-align: middle
-    display: table-cell
-    .portfolio_case-title
-      display: block
-    .portfolio_case-brand
-      display: block
+    visibility: visible
+    color: rgba(255, 255, 255, .8)
+    background-color: rgba(136, 136, 136, .8)
 
 .portfolio_case-content
   transform: rotate(-$rotation)
@@ -322,7 +334,9 @@ a
   left: 80%
   top: 46%
   font-size: 5em
-  display: none
+  visibility: hidden
+  color: rgba(255, 255, 255, 0)
+  transition: visibility 0s, color .2s
 
 .video_unit__img-1:before
   background: url(/images/Video_1.png)
@@ -341,7 +355,8 @@ a
 
 .video_unit:hover
   .video_overlay
-    display: block
+    visibility: visible
+    color: rgba(255, 255, 255, 1)
 
 //  REVIEW
 
