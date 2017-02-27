@@ -35,6 +35,15 @@ function nextFrame(slider) {
   sliderJS(next, slider);
 }
 
+function previousFrame(slider) {
+  var current = $(slider).find(".slider_control__on").attr("rel");
+  var max = $(slider).find(".slider_nav").find(".slider_control").length;
+  var next = (+current - 1 >= 0) ? +current - 1 : max - 1;
+  $(slider).find(".slider_control").removeClass("slider_control__on");
+  $(slider).find('.slider_control[rel="'+next+'"]').addClass("slider_control__on");
+  sliderJS(next, slider);
+}
+
 function calcWidth(slider) {
   var trigger_width = $(slider).data("slider-max-width")
   if (!$.isNumeric(trigger_width) || $(window).width() < trigger_width) {
@@ -45,7 +54,7 @@ function calcWidth(slider) {
     sliderJS(frame, slider);
     timers.push(setInterval(function() {
       nextFrame(slider);
-    }, 3000));
+    }, 5000));
   } else {
     $(slider).find(".slider_wrap").removeAttr("style");
     $(slider).find(".slider_unit").removeAttr("style");
@@ -58,11 +67,21 @@ function sliderJS(obj, sl) {
   var step = $(bl).outerWidth(true);
   $(wrap).css("margin-left", -step*obj);
 }
+
 $(document).on("click", ".slider .slider_nav .slider_control", function() {
   var sl = $(this).closest(".slider");
   $(sl).find(".slider_control").removeClass("slider_control__on");
   $(this).addClass("slider_control__on");
   var obj = $(this).attr("rel");
   sliderJS(obj, sl);
+  return false;
+});
+
+$(document).on("swipe", ".slider", function(e) {
+  if (e.originalEvent.detail.direction == "right") {
+    nextFrame(this);
+  } else if (e.originalEvent.detail.direction == "left") {
+    previousFrame(this);
+  }
   return false;
 });
