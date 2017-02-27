@@ -22,10 +22,6 @@ body
   font-family: $font-text
   font-size: $font-size-base
 
-button
-  color: $text-color-main
-  cursor: pointer
-
 h1,h2,h3,h4,h5,h6
   font-family: $font-headings
 
@@ -107,7 +103,7 @@ a
   h3
     font-size: 2.8em
     font-weight: normal
-    color: $button-color
+    color: $button__color
   h5
     display: table-cell
     font-weight: normal
@@ -164,6 +160,7 @@ a
   margin: .5em 0
   display: table
   transition: background-color .2s, color .2s
+  cursor: pointer
 
 .service-blocks_block:hover
   background-color: $service-blocks__overlay-color
@@ -197,8 +194,15 @@ a
   display: block
   margin-left: auto
   margin-right: auto
-  background: $button-color
-  border: solid .1em $button-color
+  background: $button__color
+  color: $button__color-active
+  border: solid .1em $button__color
+  transition: background .2s, color .2s, border-color .2s
+
+.button:hover
+  background: $button__color-active
+  color: $button__color
+  border-color: $button__color-active
 
 .button__transparent
   background: none
@@ -216,7 +220,11 @@ a
   line-height: 1.5em
 
 .service-text_link
-  color: $button-color
+  color: $service-text_link__color
+  transition: color .2s
+
+.service-text_link:hover
+  color: $service-text_link__color-active
 
 //  PORTFOLIO
 .portfolio
