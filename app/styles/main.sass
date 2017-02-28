@@ -8,6 +8,7 @@
 @import "../fonts/inconsolata/inconsolata.css"
 @import "../fonts/montserrat/montserrat.css"
 
+//  GLOBAL STYLES
 html
   width: 100%
   margin: 0
@@ -34,6 +35,7 @@ a
   margin-right: auto
   display: block
 
+//  BACKGROUNDS
 .background-top
   width: 100%
   background: url('../images/Background_1.png')
@@ -48,20 +50,23 @@ a
   width: 100%
   background: url('../images/Background_4.png')
 
+//  MENU-HEADER
 .menu-header
   font-family: $font-headings
   text-align: center
   padding-top: 1.6em
-  ul
-    margin: 0
-    list-style: none
-    display: inline
+
+.menu-header_list
+  margin: 0
+  list-style: none
+  display: inline
   li
     display: inline
     margin-right: 2.5em
-    a
-      text-decoration: none
-      color: $text-color-main
+
+.menu-header_link
+  text-decoration: none
+  color: $text-color-main
 
 .menu-header::after
   content: ""
@@ -73,30 +78,45 @@ a
   height: 1px
   background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(47,162,229,1) 50%, rgba(255,255,255,0) 100%)
 
+//  TOP
 .top
-  .section
-    margin: 16.6em 0 7.5em
-  .img-size
-    height: 63px
-    //float: left
-    display: table-cell
-    vertical-align: middle
-    img
-      display: inline
-  h1
-    display: table-cell
-    font-weight: normal
-    font-size: 2.7em
-    padding-left: .5em
-  p
-    line-height: 1.6em
-  p::after
-    content: ""
-    display: block
-    width: 1.3em
-    margin-top: .5em
-    height: 1px
-    background: $text-color-main
+  margin: 15.6em 0 8.6em
+
+.top:after
+  clear: both
+  content: ""
+  display: block
+
+.top_header
+  display: table
+
+.top_logo
+  display: table-cell
+  position: relative
+  top: .3em
+
+.top_header::after
+  display: block
+  height: 63px
+  width: 1px
+  content: ""
+
+.top_title
+  display: table-cell
+  font-weight: normal
+  font-size: 2.7em
+  padding-left: .5em
+
+.top_text
+  line-height: 1.45em
+
+.top_text::after
+  content: ""
+  display: block
+  width: 1.3em
+  margin-top: .5em
+  height: 1px
+  background: $text-color-main
 
 .intro
   margin-top: 24em
