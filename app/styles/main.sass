@@ -29,6 +29,11 @@ h1,h2,h3,h4,h5,h6
 a
   color: $text-color-main
 
+=clearfix
+  clear: both
+  content: ""
+  display: block
+
 .container
   max-width: 1216px
   margin-left: auto
@@ -54,14 +59,14 @@ a
   width: 100%
   z-index: 0
   background-color: $color-bg-base
-  background-image: linear-gradient(-60deg, transparent 0%, transparent 38.9%, $color-stripes 38.9%, $color-stripes 39%, transparent 39%, transparent 54.9%, $color-stripes 54.9%, $color-stripes 55%, transparent 55%, transparent 70.9%, $color-stripes 70.9%, $color-stripes 71%, transparent 71%, transparent 100%)
+  background-image: linear-gradient(-60deg, transparent 0%, transparent 54.9%, $color-stripes 54.9%, $color-stripes 55%, transparent 55%, transparent 65.9%, $color-stripes 65.9%, $color-stripes 66%, transparent 66%, transparent 76.9%, $color-stripes 76.9%, $color-stripes 77%, transparent 77%, transparent 100%)
 
 .background-stars:before
   position: absolute
   content: ""
   width: 100%
   height: 878px
-  z-index: -1
+  z-index: -2
   background-image: url('../images/Background_2.png')
 
 .background-stars-reverse
@@ -78,10 +83,18 @@ a
   background: url('../images/Background_4.png')
 
 .background-gradient
+  position: relative
+  width: 100%
+  z-index: 1
+
+.background-gradient:before
   background: linear-gradient(5deg, rgba(47,162,229,0.0) 10%,rgba(47,162,229,0.5) 50%,rgba(47,162,229,0.0) 90%)
   height: 86.5em
-  display: table
+  position: absolute
+  content: ""
   width: 100%
+  z-index: -1
+  pointer-events: none
 
 //  MENU-HEADER
 .menu-header
@@ -116,9 +129,7 @@ a
   margin: 15.6em 0 8.6em
 
 .top:after
-  clear: both
-  content: ""
-  display: block
+  +clearfix
 
 .top_header
   display: table
@@ -154,6 +165,9 @@ a
 //  INTRO
 .intro
   margin-top: 11.3em
+
+.intro:after
+  +clearfix
 
 .intro_title-major
   font-size: 2.7em
@@ -199,8 +213,15 @@ a
 
 //  SERVICES
 .services
-  display: table-cell
-  vertical-align: middle
+  width: 100%
+  position: relative
+  top: 43.25em
+
+.services_content
+  transform: translateY(-50%)
+
+.services_content:after
+  +clearfix
 
 //  SERVICE-BLOCKS
 .service-blocks_column
@@ -284,24 +305,21 @@ a
 
 //  PORTFOLIO
 .portfolio
-  position: relative
-  bottom: 26em
-
+  padding-bottom: 5em
 
 .portfolio_title
   font-size: 2.8em
   font-weight: 400
   text-align: center
   padding-top: 3.5em
+  margin-top: 9.5em
 
 .portfolio_content
   margin-top: 9em
   margin-bottom: 7em
 
 .portfolio_content:after
-  content: ""
-  display: block
-  clear: both
+  +clearfix
 
 .portfolio_case
   width: $portfolio_case-size
