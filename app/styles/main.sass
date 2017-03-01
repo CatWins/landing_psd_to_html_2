@@ -35,20 +35,53 @@ a
   margin-right: auto
   display: block
 
+.marker::after
+  content: ""
+  display: block
+  width: 1em
+  margin-top: .5em
+  height: 1px
+  background: $text-color-main
+
 //  BACKGROUNDS
 .background-top
   width: 100%
   background: url('../images/Background_1.png')
 
 .background-stars
-  margin-top: 12.5em
+  position: relative
+  padding-top: 12.5em
   width: 100%
-  background-color: #1c1c20
-  background-image: url('../images/Background_2.png'), url('../images/Background_3.png')
+  z-index: 0
+  background-color: $color-bg-base
+  background-image: linear-gradient(-60deg, transparent 0%, transparent 38.9%, $color-stripes 38.9%, $color-stripes 39%, transparent 39%, transparent 54.9%, $color-stripes 54.9%, $color-stripes 55%, transparent 55%, transparent 70.9%, $color-stripes 70.9%, $color-stripes 71%, transparent 71%, transparent 100%)
+
+.background-stars:before
+  position: absolute
+  content: ""
+  width: 100%
+  height: 878px
+  z-index: -1
+  background-image: url('../images/Background_2.png')
+
+.background-stars-reverse
+  position: relative
+  width: 100%
+  z-index: -2
+
+.background-stars-reverse:before
+  @extend .background-stars:before
+  transform: scaleY(-1)
 
 .background-review
   width: 100%
   background: url('../images/Background_4.png')
+
+.background-gradient
+  background: linear-gradient(5deg, rgba(47,162,229,0.0) 10%,rgba(47,162,229,0.5) 50%,rgba(47,162,229,0.0) 90%)
+  height: 86.5em
+  display: table
+  width: 100%
 
 //  MENU-HEADER
 .menu-header
@@ -118,47 +151,53 @@ a
   height: 1px
   background: $text-color-main
 
+//  INTRO
 .intro
-  margin-top: 24em
-  h3
-    font-size: 2.8em
-    font-weight: normal
-    color: $button__color
-  h5
-    display: table-cell
-    font-weight: normal
-    font-size: 1.5em
-    padding-left: .5em
-  .img-size
-    height: 12px
-    //float: left
-    display: table-cell
-    vertical-align: middle
-    img
-      display: inline
+  margin-top: 11.3em
 
+.intro_title-major
+  font-size: 2.7em
+  font-weight: normal
+  color: $intro_title-major__color
+
+.intro_header
+  display: table
+
+.intro_header:after
+  display: block
+  height: 40px
+  width: 1px
+  content: ""
+
+.intro_title
+  display: table-cell
+  font-weight: normal
+  font-size: 1.4em
+  padding-left: .5em
+
+.intro_logo
+  max-height: 40px
+  display: table-cell
+  position: relative
+  top: .3em
+
+.intro_text
+  font-size: .9em
+  line-height: 1.5em
+
+.intro_text:after
+  @extend .marker::after
+  font-size: 1.5em
+  margin-top: 1em
+
+//    BROWSER UPGRADE
 .browserupgrade
   margin: 0.2em 0
   background: #ccc
   color: #000
   padding: 0.2em 0
 
-
-//BEM NOTATION BELOW THIS LINE
-.marker::after
-  content: ""
-  display: block
-  width: 1em
-  margin-top: .5em
-  height: 1px
-  background: $text-color-main
-
-.background-gradient
-  background: linear-gradient(5deg, rgba(47,162,229,0.0) 10%,rgba(47,162,229,0.5) 50%,rgba(47,162,229,0.0) 90%)
-  height: 1514px
-  display: table
-  width: 100%
-
+//  SERVICES
 .services
   display: table-cell
   vertical-align: middle
@@ -166,10 +205,7 @@ a
 //  SERVICE-BLOCKS
 .service-blocks_column
   transform: rotate($rotation)
-  // overflow: visible
-  // position: relative
   width: 40%
-  //46.5
   float: left
   margin: 1% 0
 
@@ -229,10 +265,10 @@ a
 
 //SERVICE-TEXT
 .service-text_title
-  font-size: 2.4em
+  font-size: 2.7em
   font-weight: 100
   text-align: justify
-  padding-right: 35%
+  padding-right: 30%
 
 .service-text_paragraph
   padding-right: 30%
@@ -249,16 +285,23 @@ a
 //  PORTFOLIO
 .portfolio
   position: relative
-  bottom: 18em
+  bottom: 26em
+
 
 .portfolio_title
   font-size: 2.8em
   font-weight: 400
   text-align: center
+  padding-top: 3.5em
 
 .portfolio_content
   margin-top: 9em
-  margin-bottom: 37em
+  margin-bottom: 7em
+
+.portfolio_content:after
+  content: ""
+  display: block
+  clear: both
 
 .portfolio_case
   width: $portfolio_case-size
