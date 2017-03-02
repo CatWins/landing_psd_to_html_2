@@ -47,6 +47,7 @@ function previousFrame(slider) {
 function calcWidth(slider) {
   var trigger_width = $(slider).data("slider-max-width")
   if (!$.isNumeric(trigger_width) || $(window).width() < trigger_width) {
+    $(slider).find(".slider_nav").removeClass("removed")
     var w = Math.floor($(slider).width());
     var wm = Math.ceil($(slider).find(".slider_unit").width(w).outerWidth(true));
     $(slider).find(".slider_wrap").width($(slider).find(".slider_unit").length * wm);
@@ -58,6 +59,7 @@ function calcWidth(slider) {
   } else {
     $(slider).find(".slider_wrap").removeAttr("style");
     $(slider).find(".slider_unit").removeAttr("style");
+    $(slider).find(".slider_nav").addClass("removed")
   }
 }
 
