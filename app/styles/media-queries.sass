@@ -1,0 +1,108 @@
+$break-xs: 320px
+$break-sm: 480px
+$break-md: 800px
+$break-lg: 1200px
+
+$break-xs_font-size: 10px
+$break-sm_font-size: 12px
+$break-md_font-size: 14px
+$break-lg_font-size: 16px
+
+@media only screen and (max-width: $break-lg)
+  .top, .intro, .services_content, .review_quote
+    margin-left: 7% !important
+    margin-right: 7% !important
+  .footer
+    text-align: center
+    font-size: 1.2em
+  .portfolio_case
+    margin: 0 auto
+  .top_logo, .top_header:after
+    height: 3em
+  .service-text_title, .service-text_paragraph
+    padding: 0
+  .service-blocks_column
+    width: 100%
+    margin: 0 auto
+    transform: none
+    float: none
+    +clearfix
+  .service-blocks_block
+    width: 30%
+    display: inline-table
+    vertical-align: middle
+  .service-blocks_content
+    transform: none
+  // .portfolio_button
+    margin-top: 20em
+  .slider_nav
+    display: none
+  .portfolio_case-overlay
+    visibility: visible
+    color: rgba(255, 255, 255, .8)
+    background-color: rgba(136, 136, 136, .8)
+  .video
+    height: 45em
+  .video_content
+    left: -30%
+    right: -16%
+  .video_overlay
+    top: 4.5em
+    left: 60%
+  .video_unit__img-1
+    .video_overlay
+      left: 70%
+  .video_unit__img-3
+    .video_overlay
+      left: 40%
+
+@media screen and (max-width: $break-lg)
+  body
+    font-size: $break-lg_font-size
+  .video_overlay
+    display: block
+  .video_overlay
+    display: none
+  .menu-header_toggle
+    display: block
+  .menu-header_list
+    visibility: hidden
+    position: absolute
+    transform: translate(-50%, -50%)
+    transition: visibility 0s, transform .3s, opacity .3s
+    opacity: 0
+  .menu-header__active
+    visibility: visible
+    transform: translate(-50%, 1em)
+    opacity: 1
+    li
+      display: block
+      margin-top: 1em
+
+
+@media screen and (max-width: $break-md)
+  body
+    font-size: $break-md_font-size
+  .video_content
+    left: -80%
+    right: -80%
+    top: -30%
+
+@media screen and (max-width: $break-sm)
+  body
+    font-size: $break-sm_font-size
+
+@media screen and (max-width: $break-xs)
+  body
+    font-size: $break-xs_font-size
+  .video_content
+    left: -70%
+    right: -40%
+    top: -30%
+
+@media screen and (min-width: $break-lg)
+  .portfolio
+    .slider
+      overflow: visible
+    .slider_wrap
+      float: none
