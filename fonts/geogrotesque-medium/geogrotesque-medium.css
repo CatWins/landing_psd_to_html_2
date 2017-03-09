@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Geogrotesque-Medium';
+  src: url('Geogrotesque-Medium.eot?#iefix') format('embedded-opentype'),  url('Geogrotesque-Medium.otf')  format('opentype'),
+	     url('Geogrotesque-Medium.woff') format('woff'), url('Geogrotesque-Medium.ttf')  format('truetype'), url('Geogrotesque-Medium.svg#Geogrotesque-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
